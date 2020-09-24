@@ -54,7 +54,7 @@ export default function createTrackingHandler(params: TrackingParams): TrackingH
     const ranged = prevSelection.start !== prevSelection.end;
     const [tracking] = trackingQueue;
     if (!tracking) {
-      if (lastChar === params.tag) {
+      if (lastChar === params.tag || params.tag === '') {
         position = selection.start - 1;
         trackingQueue = [true, ...trackingQueue];
       }
